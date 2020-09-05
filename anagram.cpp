@@ -1,19 +1,19 @@
 #include "anagram.h"
 
-void increment (const std::string& word, int* count)
+void increment (const std::string& word1, int* count)
 {
-  for (int i=0;i<word.length();i++)
+  for (int i=0;i<word1.length();i++)
   {
-    if (word[i]!=' ')
-      count[tolower(word(i))-97]++;
+    if (word1[i]!=' ')
+      count[tolower(word1(i))-97]++;
   }
 }
   
-void decrement (const std::string& word, int* count)
+void decrement (const std::string& word2, int* count)
 {
-  for (int i=0;i<word.length();i++)
+  for (int i=0;i<word2.length();i++)
   {
-    if (word[i]!=' ')
+    if (word2[i]!=' ')
       count[tolower(word(i))-97]--;
   }
 }
@@ -30,10 +30,9 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
   
 }
 
-std::vector<std::string> Anagram::SelectAnagrams(
-        const std::string& word,
-        const std::vector<std::string>& candidates) {
-    vector <string> Candidates={}
+std::vector<std::string> Anagram::SelectAnagrams(const std::string& word,
+                                                 const std::vector<std::string>& candidates) {
+   std::vector<std::string> Candidates={}
     for (int i=0;i<candidates.size();i++)
     {
         
