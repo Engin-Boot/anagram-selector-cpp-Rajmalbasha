@@ -39,12 +39,12 @@ std::vector<std::string> Anagram::SelectAnagrams(const std::string& word,
 const std::vector<std::string>& candidates) {
   
    std::vector<std::string> Candidates={}
-    for (int i=0;i<candidates.size();i++)
+    for (std::string s : candidates)
     {
         
-         if(WordPairIsAnagram(word,candidates[i])
+         if(WordPairIsAnagram(word,s)
             {
-                Candidates.push_back(candidates[i]);
+                Candidates.push_back(s);
             }
     }
     return Candidates;
