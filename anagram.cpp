@@ -1,6 +1,6 @@
 #include "anagram.h"
 
-void increment (const std::string& word1, int* count)
+void incrementcount (const std::string &word1, int *count)
 {
   for (int i=0; i< word1.length(); i++)
   {
@@ -11,7 +11,7 @@ void increment (const std::string& word1, int* count)
   }
 }
   
-void decrement (const std::string& word2, int* count)
+void decrementcount (const std::string &word2, int *count)
 {
   for (int i=0; i< word2.length();i++)
   {
@@ -21,11 +21,11 @@ void decrement (const std::string& word2, int* count)
     }
   }
 }
-bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
+bool Anagram::WordPairIsAnagram(const std::string &word1, const std::string &word2) {
      
      int count[26]={0};
-     increment (word1,count);
-     decrement (word2,count);
+     incrementcount(word1,count);
+     decrementcount(word2,count);
     for (int i=0;i<26;i++)
     {
         if(count[i])
