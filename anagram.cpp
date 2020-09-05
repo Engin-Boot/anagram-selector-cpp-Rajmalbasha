@@ -17,7 +17,7 @@ void decrement (const std::string& word2, int* count)
   {
     if (word2[i]!=' ')
     {
-      count[tolower(word(i))-97]--;
+      count[tolower(word2(i))-97]--;
     }
   }
 }
