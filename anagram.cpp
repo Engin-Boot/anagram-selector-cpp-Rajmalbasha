@@ -1,14 +1,26 @@
 #include "anagram.h"
 
+void increment (const std::string& word, int* count)
+{
+  for (int i=0;i<word.length();i++)
+  {
+    if (word[i]!=' ')
+      count[tolower(word(i))-97]++;
+  }
+}
+  
+void decrement (const std::string& word, int* count)
+{
+  for (int i=0;i<word.length();i++)
+  {
+    if (word[i]!=' ')
+      count[tolower(word(i))-97]--;
+  }
+}
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
   int count[26]={0};
-    for (int i=0;word1[i]&&word2[i];i++)
-    {   
-        if (word1(i)!=' ')
-            count[tolower(word1(i))-97]++;
-        if(word2(i)!=' ') 
-            count[tolower(word2(i))-97]--;
-    }
+     increment(word1,count);
+     decrement(word2,count);
     for (int i=0;i<26;i++)
     {
         if(count[i])
